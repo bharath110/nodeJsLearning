@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+ 
+ <head>
+    
+<script data-require="traceur@0.0.0-20140302" data-semver="0.0.0-20140302" src="https://traceur-compiler.googlecode.com/git/bin/traceur.js"></script>
+   
+ <script data-require="traceur@0.0.0-20140302" data-semver="0.0.0-20140302" src="https://traceur-compiler.googlecode.com/git/src/bootstrap.js"></script>
+  
+  <link rel="stylesheet" href="style.css" />
+   
+ <script src="script.js"></script>
+  </head>
+
+ 
+ <body>
+ 
+   <h1>Hello Plunker!</h1>
+  
+</body>
+ 
+ <script>
+  
+  let add = (x,y)=>x+y;
+   let a=2,b=3;
+   
+  
+  document.write(add(8,2));
+    
+document.write("<br>a:"+a+"<br>b:"+b);
+   
+ 
+  let dowork =(url,{data,option})=>{
+     return data;
+   };
+   
+ document.write("<br>Data is:"+dowork("api/test",{option:true, data:98}));
+   
+ 
+  var defParams = (name)=>{
+     name = name || "StaticName";
+     return name;
+     }
+ 
+  document.write("<br>Name is:"+defParams("data"));
+   
+   
+var emails = (userid,domain="@nousinfo.com")=>{
+     return userid+domain;
+   }
+  
+ document.write("<br>Email Id is:"+emails('bharathkn'));
+   
+   
+ let getSum =(name, ...numbers)=>{
+      let sum=0
+      numbers.forEach(function(n){
+        
+        sum+=n;
+      })
+      return sum;
+    }
+   document.write("<br>Sum of the digits is:"+getSum("Bharath",8,9,8,9,10));
+  
+  function testSpreadOp(a,b,c){
+    return a+b+c;
+  }
+  var arrayOfNumbers = [1,2,3]
+   document.write("<br>TestSpread sum:"+testSpreadOp(...arrayOfNumbers));
+  
+  var c = [4,5,6,...arrayOfNumbers];
+   document.write("<br>Array building :"+c);
+  
+  class Visitor{
+    
+    isVisted(val=false){
+      return  val;
+    }
+  }
+  
+  var visitor = new Visitor();
+   document.write("<br>Visitor  :"+visitor.isVisted());
+  
+  
+  </script>
+
+</html>
