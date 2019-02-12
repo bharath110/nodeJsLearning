@@ -83,6 +83,80 @@ var emails = (userid,domain="@nousinfo.com")=>{
    document.write("<br>Visitor  :"+visitor.isVisted());
   
   
+  
+  
+  
+  
+  
+  
+  
+  document.write("Hello to JS learner!");
+    let numbers = function *(){
+      let i=1
+      while(i<10){
+        
+        let delta = yield i
+        i += delta || 1; 
+        
+      }
+    }
+    
+    let iterator = numbers()
+    let next = iterator.next()
+    let sum=0 
+    while(!next.done){
+      sum+= next.value;
+      document.write("<br>n val :"+next.value);
+      
+      next = iterator.next(3)
+    }
+    
+    class Company
+    {
+      constructor(){
+        this.employees = []
+      }
+      addEmps(...emps){
+        this.employees = this.employees.concat(emps)
+      }
+      *[Symbol.iterator](){
+        for(let e of this.employees){
+          yield e
+        }
+      }
+      
+    }
+    let c=0
+    let company = new Company() 
+    company.addEmps('E1','E2','E3')
+    for(let emp of company){
+      c+=1
+    }
+    document.write("<br>C:"+c);
+    document.write("<br>Sum is :"+sum);
+  //  var multiples = [i for i in range(30) if i % 3 == 0]
+   //var squared = [x**2 for x in range(10)]
+   //var numbers = [1, 2, 3, 21, 22, 30];
+   //var evens = [for (i of numbers) if (i % 2 === 0) i];
+    document.write("<br>Octa val :"+0o71);
+    document.write("<br>Octa val :"+0b1001);
+    document.write("<br>B val :"+Number(0b1001));
+    document.write("<br>Val :"+Math.pow(2,3));
+    
+    var match = [1,3,5,1].find(i => i> 3)
+    document.write("<br>match :"+match);
+     var indx = [1,3,5,1].findIndex(i => i> 3)
+    document.write("<br>indx :"+indx);
+    
+     var ary = [1,3,5,1]
+    document.write("<br>indx :"+ary.fill('a',1,2));
+     
+    // var array = [i for (i of [1,2,3]) i];
+    var set = new Set([1,2,3,4]);
+      document.write("<br>array :"+set.has(2));
+   //var map = new Map()
+    
+  
   </script>
 
 </html>
